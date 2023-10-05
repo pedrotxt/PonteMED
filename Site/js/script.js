@@ -39,7 +39,7 @@ function insertItem(item, index) {
   let tr = document.createElement("tr");
 
   tr.innerHTML = `
-    <td>${item.desc}</td>
+    <li>${item.desc}</li>
     <td>${item.qtd}ml</td>
     <td class="columnType">${
       item.type === "Normal"
@@ -61,7 +61,6 @@ function loadItens() {
     insertItem(item, index);
   });
 
-  getTotals();
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem("db_items")) ?? [];
